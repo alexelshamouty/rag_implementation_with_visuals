@@ -39,8 +39,9 @@ def generate_answers(user_question, documents):
     You are an expert in all matters software and you will help me find answers to my questions based on the documents I will be sending you.
     You should only output factual results.
     If you do not know or if you are unsure, you should say so and you should not make up answers.
-    I also do not want you to produce summerised answered and I want you to reference parts of the documents in your response.
+    I also do not want you to produce summerised answered and I want you to reference parts of the documents in your response, please make sure you elaborate based on the documents you receive.
     And I want you to speak as if you are the owner of the document.
+    Enumerate your responses when needed.
     """
    human_message = """
     Here is my question: {query}
