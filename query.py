@@ -58,9 +58,9 @@ def generate_ranked_results(queries: list):
                             }
                 ))
             
-    top_5_list = heapq.nlargest(5, docscore, key=lambda x: x[0])
+    top_5_list = heapq.nlargest(10, docscore, key=lambda x: x[0])
 
-    top_5_scores = [score for score, document in top_5_list]
-    top_5_documents = [document for score, document in top_5_list]
+    top_5_scores = [score for score, document in top_5_list if score > 0.3]
+    top_5_documents = [document for score, document in top_5_list if score > 0.3]
 
     return top_5_scores, top_5_documents
