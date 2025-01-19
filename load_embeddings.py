@@ -25,7 +25,7 @@ def read_data(path: str):
     return pdftext
 
 def split_and_store(data: list):
-    splitter = RecursiveCharacterTextSplitter("\n", chunk_size=4000, chunk_overlap=0, length_function = len )
+    splitter = RecursiveCharacterTextSplitter("\n", chunk_size=5000, chunk_overlap=0, length_function = len )
     splits = splitter.split_text("\n\n".join(data))
     for index, text in tqdm(enumerate(splits), total=len(splits), desc="Loading embeddings into Chroma"):
         chroma_collection.add(str(index), documents=text)
