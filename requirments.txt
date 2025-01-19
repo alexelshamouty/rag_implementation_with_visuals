@@ -1,0 +1,8 @@
+chromadb
+langchain
+pypdf
+matplotlib
+numpy
+umap
+langchain-openai
+langchain-community
