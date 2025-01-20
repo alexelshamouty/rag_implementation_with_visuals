@@ -1,3 +1,19 @@
+# Visualisation of embedding's distance to original query, and applying query expansion.
+
+I was looking for a way to visualise how close/far the extracted embeddings from a vector database are when I am querying it for external information. I came across [this article](https://medium.com/@sumit_datta/is-your-rag-hallucinating-look-under-the-hood-97d70040563b) that shows how you can use [umap](https://umap-learn.readthedocs.io/en/latest/) to collapse a high-dimensional array into a 2D array that you can visualise on a 2D plot.
+
+I added query expansion and score thresholds. Although to be honest one can also use an abstraction on-top of chroma or a more advanced implementation of a vectordb to do apply thresholds to the extracted distances. Still, query expansion is a nice technique.
+
+Before query expansion I had this as a result:
+
+ ![Before query expansion](./images/non-augmented.png)
+
+And after:
+
+ ![Before query expansion](./images/augmented.png)
+
+Check the output below:
+
 > python main.py augment "What is untrue about eventsourcing?" --restrict  
 > 0.52442545  
 > 0.5241878  
